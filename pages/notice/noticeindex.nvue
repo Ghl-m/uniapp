@@ -1,0 +1,197 @@
+<template>
+    <view class="page">
+		<view class="backclass">
+			<image @click="backindex()" style="cursor:pointer;width:50rpx;height:50rpx;margin: 25rpx;" src="/static/homePage/jiantou.png" mode=""></image>
+			
+			<!-- <uni-view data-v-1fd6d03c="" class="cu-bar fixed square-custom-bg"> -->
+				<uni-view data-v-1fd6d03c="" class="cu-bar" style="top: 0px;"><text>公告提示</text></uni-view>
+			<!-- </uni-view> -->
+			
+		</view>
+		
+		<!-- 数据 -->
+		<view v-for="(item,index) in list" :key="item.title" @click="itemClick(item,index)" :class="index==list.length-1?'botclass':'line'">
+			
+			<!-- <router-link :to="{'path':'/pages/notice/listshow','query': item }"> -->
+				<text class="textHellow" style="color:#6d6d6d;font-size: 34rpx;display: block;font-weight:bolder;width: 60%;">{{item.one}}\n</text>
+				<text class="textHellow" style="color:#aaaaaa;font-size:26rpx;font-weight: bold;display: block;width: 38%;">{{item.two}}\n
+					</text>
+					<text class="textHellow" style="position: relative;margin-top: 30rpx;font-size:26rpx;color:#6d6d6d;font-weight: 800;">{{item.three}}\n
+						<text class="arrow-right"></text>
+					</text>
+			<!-- </router-link> -->
+				<!-- <text class="textHellow" style="color: #b0b1b0;font-size: 24rpx;">收益</text><text class="textHellow" style="color: #b0b1b0;margin-left: 35%;font-size: 24rpx;">剩余预算</text> -->
+			
+		</view>
+		<view class="hitclas">
+			<text>已经见底了,没有数据了～</text>
+			
+		</view>
+      <!--  <view>
+            <text class="title">个人信息保护指引</text>
+        </view>
+        <view class="text-item">
+            <text class="tl">1.在浏览使用时，我们会收集、使用设备标识信息用于推荐。</text>
+        </view>
+        <view class="text-item">
+            <text class="tl">2.我们可能会申请位置权限，用于演示 uni-app 的地图、定位能力。</text>
+        </view>
+        <view class="text-item">
+            <text class="tl">3.你可以查看完整版</text>
+        </view>
+        <view class="text-item flex-r">
+            <text class="tl hl" @click="openprotocol">《用户协议》</text>
+            <text class="tl"> 和 </text>
+            <text class="tl hl" @click="openPrivacyPolicy">《隐私政策》</text>
+        </view>
+        <view class="text-item">
+            <text class="tl">以便了解我们收集、使用、共享、存储信息的情况，以及对信息的保护措施。</text>
+        </view>
+        <view class="text-item">
+            <text class="service">如果你同意请点击下面的按钮以接受我们的服务</text>
+        </view> -->
+       <!-- <view class="text-item confirm">
+            <button class="btn-privacy" type="primary" @click="agree">同意</button>
+			<button class="btn-privacy btn-disagree" @click="disagree">暂不使用</button>
+        </view> -->
+        <!-- <view class="exit-area">
+            
+        </view> -->
+    </view>
+</template>
+
+<script>
+// import config from '@/uni-starter.config.js';
+// const { about } = config
+    export default {
+        data() {
+            return {
+				list:[{"one":'注册用户需知',
+				"two":'注册用户需知',
+				"tt":"尊敬的用户","rr":"您好",
+				'five':"由于我们公司是通过系统自动转账的，所以新申请的用户需要联系客服激活自动转账功能之后即可，所有新注册的客户未合约之前必须要先充值1元携带零头后即可激活成功！","three":"查看详情"},
+				{"one":'温馨提示',
+				"two":'温馨提示',
+				'five':"98%","three":"查看详情"},{"one":'解冻方式',
+				"two":'解冻方式',
+				'five':"98%","three":"查看详情"},],
+            }
+        },
+        // onLoad() {
+        //     this._canBack = false;
+        // },
+        // onBackPress() {
+        //     return !this._canBack;
+        // },
+        methods: {
+			backindex(){
+				this.$router.push('/pages/index/index')
+			},
+			// 数据点击 页面跳转
+			itemClick(key,index){
+				console.log(key)
+				this.$router.push({'path':'/pages/notice/listshow', 'query': key  })
+			},
+        }
+    }
+</script>
+
+<style>
+    .page {
+        /* padding: 80px 20px; */
+		background-color: #f6f7f6;
+		width: 100%;
+		height: 2000rpx;
+		/* display: flex; */
+    }
+	.backclass{
+		background: #6accc8;
+		width: 100%;
+		position: relative;
+		
+	}
+	.cu-bar{
+		position: absolute;
+		margin: 22rpx;
+		/* bottom: 20rpx; */
+		left: 37%;
+		color: white;
+		font-size: 36rpx;
+	}
+   /* 数据 */
+   .line{
+   	width: 94%;
+   	margin: 10rpx 20rpx 10rpx 20rpx;
+   	/* background:linear-gradient(to bottom,#ecfffb,#fdfffd); */
+   	box-shadow: 1px 1px 1px 1px #eee;
+   	border: 1rpx;
+   	/* border-color: ; */
+	background: white;
+   	border-radius: 20rpx;
+   	padding: 20rpx 0;
+   	position: relative;
+   }
+   .botclass{
+   	width: 94%;
+   	margin: 10rpx 20rpx 10rpx 20rpx;
+	background: white;
+   	/* background:linear-gradient(to bottom,#ecfffb,#fdfffd); */
+   	box-shadow: 1px 1px 1px 1px #eee;
+   	border: 1rpx;
+   	/* border-color: ; */
+   	border-radius: 20rpx;
+   	padding: 20rpx 0;
+   	position: relative;
+   	margin-bottom: 20rpx;
+   }
+   .textHellow{
+	padding-left: 10rpx;
+   	margin:10rpx 20rpx;
+   	line-height: 40rpx;
+   	white-space: nowrap; /* 确保文本在一行内显示 */
+   	overflow: hidden; /* 隐藏溢出的内容 */
+   	text-overflow: ellipsis; /* 使用省略号表示溢出的文本 */
+   }
+   .hitclas{
+   	/* padding-bottom: 40rpx; */
+   	/* position: absolute; */
+   	color: #b2b2b2;
+   	/* display: flex; */
+   	/* color: black; */
+   	display: block;
+   	font-size: 24rpx;
+   	font-weight: bolder;
+   	margin-bottom: 140rpx;
+   	/* margin-top: 20rpx; */
+   	/* margin-left:15%; */
+   	text-align: center;
+   }
+   
+   /* 箭头 */
+   .arrow-right {
+     width: 400px;
+	font-size: 30px;
+	/* display: flex; */
+	/* background: pink; */
+	height: 50px;
+	/* border-bottom: 1px solid #999; */
+	line-height: 50px;
+	/* margin: 0 auto; */
+	position: absolute;
+	right: 0;
+	top: -24rpx;
+   }
+    
+  .arrow-right:after {
+      width: 6px;
+	 height: 6px;
+	 border-top: 2px solid;
+	 border-right: 2px solid;
+	 border-color: #ccc;
+	 content: '';
+	 position: absolute;
+	 right: 11px;
+	 top: 20px;
+	 transform: rotate(45deg);
+   }
+</style>

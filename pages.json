@@ -1,0 +1,89 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/redhot/redhotview",
+			"style": {
+				"navigationBarTitleText": "红人热榜"
+			}
+		},
+		
+		{	"path":"pages/market/ground",
+			"style": {
+				"navigationBarTitleText": "商单广场"
+			}
+		},
+		{
+			"path" : "pages/myTask/mytask/mytask",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的任务"
+			}
+		},
+		{
+			"path" : "pages/notice/noticeindex",
+			"style" : 
+			{
+				"navigationBarTitleText" : "公告提示"
+			}
+		},
+		{
+			"path" : "pages/notice/listshow",
+			"style" : 
+			{
+				"navigationBarTitleText" : "具体信息"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"titleNView": false
+		}
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		// "color": "#00BCD4",
+		"selectedColor": "#00BCD4",
+		"borderStyle": "black",
+		"position": "bottom",
+		"custom": false,
+		"backgroundColor": "#ffffff",
+		"list": [
+		  {
+			"pagePath": "pages/index/index",
+			"iconPath": "static/homePage/shouyeclick.jpg",
+			"selectedIconPath": "static/homePage/shouye.jpg",
+			"text": "首页"
+		  },
+		  {
+			"pagePath": "pages/market/ground",
+			"iconPath": "static/homePage/ground.jpg",
+			"selectedIconPath": "static/homePage/groundclick.jpg",
+			"text": "商单广场"
+		  },
+		  {
+		  	"pagePath": "/pages",
+		  	"text": "在线客服",
+		  	"iconPath": "/static/homePage/kefu.jpg",
+		  	"selectedIconPath": "/static/homePage/kefuclick.jpg"
+		  	// serach:1
+		  },
+		  {
+			"pagePath": "pages/index/",
+			"iconPath": "static/homePage/wode.jpg",
+			"selectedIconPath": "static/homePage/wodeclick.jpg",
+			"text": "我的"
+		  }
+		]
+	  }
+	
+}
